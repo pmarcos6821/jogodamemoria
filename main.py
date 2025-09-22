@@ -1,7 +1,7 @@
 import time
 from config import PREVIEW_TIME, MAX_TENTATIVAS
 from utils.registro import registrar_jogador, salvar_resultado
-from src.jogo import iniciar_jogo, mostrar_preview, verificar_par
+from src.jogo import gerar_pares, mostrar_previewfrom 
 
 def main():
     # 1. Solicita nome do jogador
@@ -30,3 +30,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
