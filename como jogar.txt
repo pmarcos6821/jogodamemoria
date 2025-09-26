@@ -1,0 +1,4 @@
+Memorize a sequencia de pares
+Clique nos pares para fixar 
+
+
