@@ -42,18 +42,6 @@ class JogoMemoriaImagens:
         self.criar_tabuleiro(preview=True)
         self.root.after(PREVIEW_TIME, self.iniciar_jogo)
 
-    def carregar_imagens(self):
-        imagens = {}
-        for nome in os.listdir(CAMINHO_IMAGENS):
-            if nome.endswith(".png"):
-                caminho = os.path.join(CAMINHO_IMAGENS, nome)
-                chave = nome.replace(".png", "")
-                img = Image.open(caminho).resize(TAMANHO_IMAGEM)
-                imagens[chave] = ImageTk.PhotoImage(img)
-        if "tampa" not in imagens:
-            raise FileNotFoundError("A imagem 'tampa.png' é obrigatória para ocultar os quadrados.")
-        return imagens
-
     def gerar_pares(self):
         nomes = [nome for nome in self.imagens.keys() if nome != "tampa"]
         selecionados = random.sample(nomes, 8)
@@ -143,3 +131,4 @@ if __name__ == "__main__":
     root = tk.Tk()
     jogo = JogoMemoriaImagens(root)
     root.mainloop()
+
